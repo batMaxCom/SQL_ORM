@@ -12,6 +12,8 @@ class Publishers(Base):
 
     def __str__(self):
         return f'Идентификатор:{self.id}, Имя:{self.name}'
+
+
 class Books(Base):
     __tablename__ = 'book'
 
@@ -27,6 +29,9 @@ class Shops(Base):
 
     id = sq.Column(sq.Integer, primary_key=True)
     name = sq.Column(sq.String(length=30), unique=True)
+
+    def __str__(self):
+        return f'Магазин:{self.name}'
 
 
 class Stocks(Base):
